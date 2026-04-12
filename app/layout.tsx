@@ -155,6 +155,21 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+                let storedTheme = localStorage.getItem('lume-theme');
+                if (storedTheme === 'dark' || (!storedTheme && darkQuery.matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch (e) {}
+            `,
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-body`}>
         <ThemeProvider>{children}</ThemeProvider>

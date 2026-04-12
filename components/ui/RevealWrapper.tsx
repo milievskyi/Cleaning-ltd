@@ -1,34 +1,25 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface RevealWrapperProps {
-  children: React.ReactNode;
-  delay?: number;
+  children: ReactNode;
   className?: string;
-  once?: boolean;
+  delay?: number;
 }
 
-export default function RevealWrapper({
-  children,
-  delay = 0,
-  className = "",
-  once = true,
-}: RevealWrapperProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once, margin: "-60px" });
-
+export default function RevealWrapper({ children, className = "", delay = 0 }: RevealWrapperProps) {
   return (
     <motion.div
-      ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 28, scale: 0.98 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      initial={{ opacity: 0, y: 32, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
-        duration: 0.75,
+        duration: delay > 0 ? 0.7 : 0.6,
         delay,
-        ease: [0.25, 1, 0.3, 1],
+        ease: [0.22, 1, 0.36, 1] // Apple-style 'buttery' curve
       }}
     >
       {children}

@@ -6,7 +6,7 @@
 :root {
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-border: rgba(255, 255, 255, 0.45);
-  --glass-blur: 28px;
+  --glass-blur: 12px;
   --glass-saturate: 160%;
   --shadow-ambient: 0 8px 32px rgba(0, 53, 39, 0.06);
   --shadow-elevated: 0 20px 48px rgba(0, 53, 39, 0.1);

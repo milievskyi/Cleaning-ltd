@@ -94,6 +94,10 @@ const config: Config = {
           "50%": { transform: "scale(1.2)" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
       },
       animation: {
         "float": "float 4s ease-in-out infinite",
@@ -101,6 +105,7 @@ const config: Config = {
         "slide-in-right": "slide-in-right 0.5s cubic-bezier(0.25, 1, 0.3, 1) forwards",
         "shake": "shake 0.4s ease-in-out",
         "scale-check": "scale-check 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
       },
     },
   },

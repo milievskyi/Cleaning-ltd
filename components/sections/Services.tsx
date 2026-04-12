@@ -42,7 +42,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-32 px-6 md:px-8 bg-surface dark:bg-[#0a1510] mesh-texture">
+    <section className="py-32 px-6 md:px-8 bg-surface dark:bg-[#0a1510]">
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
         <RevealWrapper className="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
@@ -65,9 +65,13 @@ export default function Services() {
           {/* Card 1 — Pet-Safe, wide */}
           <RevealWrapper delay={0.05} className={services[0].span}>
             <motion.div
-              className="group relative overflow-hidden rounded-[2rem] bg-surface-container-low dark:bg-white/5 p-10 md:p-12 h-full"
-              whileHover={{ backgroundColor: "rgba(236,238,240,1)" }}
-              transition={{ duration: 0.3 }}
+              className="group relative overflow-hidden rounded-[2rem] bg-surface-container-low dark:bg-white/5 p-10 md:p-12 h-full cursor-pointer"
+              whileHover={{ 
+                y: -6, 
+                backgroundColor: "rgba(236,238,240,1)",
+                boxShadow: "0 24px 48px rgba(0,53,39,0.08)"
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
             >
               <div className="relative z-10">
                 <span className="material-symbols-outlined text-4xl text-primary dark:text-primary-fixed mb-6 block transition-transform duration-500 group-hover:scale-110">
@@ -95,8 +99,12 @@ export default function Services() {
 
           {/* Card 2 — Air Quality, dark */}
           <RevealWrapper delay={0.1} className={services[1].span}>
-            <div className="group relative overflow-hidden rounded-[2rem] bg-primary-container dark:bg-primary/80 p-10 md:p-12 h-full flex flex-col justify-between">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-fixed/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <motion.div 
+              className="group relative overflow-hidden rounded-[2rem] bg-primary-container dark:bg-primary/80 p-10 md:p-12 h-full flex flex-col justify-between cursor-pointer"
+              whileHover={{ y: -6, boxShadow: "0 24px 48px rgba(6,78,59,0.3)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-fixed/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <span className="material-symbols-outlined text-4xl text-primary-fixed mb-6 block transition-transform duration-500 group-hover:-rotate-12">
                   {services[1].icon}
@@ -111,12 +119,16 @@ export default function Services() {
               <div className="relative z-10 mt-8 text-7xl font-extrabold tight-tracking text-white/10 group-hover:text-white/20 transition-colors duration-500 select-none">
                 {services[1].badge}
               </div>
-            </div>
+            </motion.div>
           </RevealWrapper>
 
           {/* Card 3 — Eco Disinfection, full width */}
           <RevealWrapper delay={0.15} className={services[2].span}>
-            <div className="group glass rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center gap-10 card-hover">
+            <motion.div 
+              className="group glass rounded-[2rem] p-10 md:p-12 flex flex-col md:flex-row items-center gap-10 cursor-pointer"
+              whileHover={{ y: -6, scale: 1.01, boxShadow: "0 24px 48px rgba(0,53,39,0.08)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+            >
               <div className="w-full md:w-1/3 overflow-hidden rounded-2xl shrink-0">
                 <Image
                   src={services[2].image!}
@@ -149,7 +161,7 @@ export default function Services() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </RevealWrapper>
         </div>
       </div>

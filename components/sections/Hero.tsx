@@ -53,7 +53,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 1, 0.3, 1] }}
-          className="mb-8 inline-flex items-center px-4 py-1.5 rounded-full glass"
+          className="mb-8 inline-flex items-center px-4 py-1.5 rounded-full glass opacity-0"
         >
           <span
             className="material-symbols-outlined text-[14px] mr-2 text-primary dark:text-primary-fixed"
@@ -71,7 +71,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.18, ease: [0.25, 1, 0.3, 1] }}
-          className="text-[clamp(3.5rem,10vw,7rem)] font-extrabold tight-tracking leading-[0.85] mb-8 text-on-surface dark:text-white"
+          className="text-[clamp(3.5rem,10vw,7rem)] font-extrabold tight-tracking leading-[0.85] mb-8 text-on-surface dark:text-white opacity-0"
         >
           A Cleaner{" "}
           <br />
@@ -85,7 +85,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.28, ease: [0.25, 1, 0.3, 1] }}
-          className="text-lg md:text-xl text-on-surface-variant dark:text-white/65 max-w-lg leading-relaxed mb-4 font-light editorial-tracking"
+          className="text-lg md:text-xl text-on-surface-variant dark:text-white/65 max-w-lg leading-relaxed mb-4 font-light editorial-tracking opacity-0"
         >
           Professional residential cleaning in Edmonton — deep cleaning,
           regular maintenance, and move-in/out service done right.
@@ -96,7 +96,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 1, 0.3, 1] }}
-          className="text-[12px] font-semibold uppercase tracking-[0.2em] text-primary/60 dark:text-primary-fixed/60 mb-10"
+          className="text-[12px] font-semibold uppercase tracking-[0.2em] text-primary/60 dark:text-primary-fixed/60 mb-10 opacity-0"
         >
           Insured &amp; Bonded · Eco-Friendly · Satisfaction Guaranteed
         </motion.p>
@@ -106,7 +106,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.42, ease: [0.25, 1, 0.3, 1] }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row gap-4 opacity-0"
         >
           <TactileButton
             size="lg"
@@ -129,7 +129,7 @@ export default function Hero() {
 
       {/* Floating air quality card */}
       <motion.div
-        className="absolute bottom-20 right-8 lg:right-16 hidden lg:block"
+        className="absolute bottom-20 right-8 lg:right-16 hidden lg:block opacity-0"
         initial={{ opacity: 0, x: 32, y: 16 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ duration: 0.9, delay: 0.65, ease: [0.25, 1, 0.3, 1] }}
