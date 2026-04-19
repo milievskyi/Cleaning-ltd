@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main id="main-content" className="pb-24">
         <Hero />
         <TrustStrip />
         <Services />

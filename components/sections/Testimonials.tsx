@@ -37,13 +37,13 @@ export default function Testimonials() {
               format_quote
             </span>
 
-            <blockquote className="text-3xl md:text-5xl font-extrabold tight-tracking text-primary leading-[1.08] mb-10 editorial-tracking">
+            <blockquote className="text-3xl md:text-5xl font-extrabold tight-tracking text-white leading-[1.08] mb-10 editorial-tracking">
               &ldquo;Came home to the cleanest my house has ever been. Worth every penny — and they were on time, professional, and friendly.&rdquo;
             </blockquote>
 
             <div className="w-14 h-1.5 bg-primary-fixed mx-auto mb-8 rounded-full" />
 
-            <p className="text-[12px] font-bold uppercase tracking-[0.45em] text-primary/70">
+            <p className="text-[12px] font-bold uppercase tracking-[0.45em] text-white/70">
               Sarah M. &mdash; Edmonton, AB
             </p>
           </motion.div>

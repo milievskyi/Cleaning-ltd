@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main className="pt-28">
+      <main id="main-content" className="pt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-12 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary/60 dark:text-primary-fixed/60 mb-3">
             Contact Us

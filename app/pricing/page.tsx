@@ -12,7 +12,7 @@ export default function PricingPage() {
   return (
     <>
       <Header />
-      <main className="pt-28">
+      <main id="main-content" className="pt-28">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tight-tracking text-on-surface dark:text-white mb-4">
             Pricing

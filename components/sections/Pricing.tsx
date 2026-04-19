@@ -157,7 +157,7 @@ export default function Pricing() {
                     <Link href="/contact" className="block outline-none">
                       <TactileButton
                         variant={tier.variant}
-                        className="w-full justify-center transition-all bg-white"
+                        className="w-full justify-center"
                       >
                         {tier.cta}
                       </TactileButton>

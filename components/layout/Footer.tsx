@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 // TODO: Replace "Lume" with final brand name

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "@/components/providers/ThemeProvider";
 import TactileButton from "@/components/ui/TactileButton";
@@ -22,6 +23,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { theme, toggle } = useTheme();
+  const router = useRouter();
 
   useEffect(() => {
     // Adds a slight throttle/debounce by letting the browser paint first
@@ -119,7 +121,7 @@ export default function Header() {
               <div className="hidden md:block">
                 <TactileButton
                   size="sm"
-                  onClick={() => (window.location.href = "/contact")}
+                  onClick={() => router.push("/contact")}
                 >
                   Get Free Quote
                 </TactileButton>
@@ -186,7 +188,7 @@ export default function Header() {
                 size="lg"
                 onClick={() => {
                   setMobileOpen(false);
-                  window.location.href = "/contact";
+                  router.push("/contact");
                 }}
               >
                 Get Free Quote
@@ -204,7 +206,7 @@ export default function Header() {
                 <span className="material-symbols-outlined text-[18px]">
                   {theme === "dark" ? "light_mode" : "dark_mode"}
                 </span>
-                {theme === "dark" ? "Light Form" : "Dark Form"}
+                {theme === "dark" ? "Light Mode" : "Dark Mode"}
               </button>
             </motion.div>
           </motion.div>

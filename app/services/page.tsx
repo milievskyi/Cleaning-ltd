@@ -12,7 +12,7 @@ export default function ServicesPage() {
   return (
     <>
       <Header />
-      <main className="pt-28 min-h-screen">
+      <main id="main-content" className="pt-28 min-h-screen">
         <div className="max-w-7xl mx-auto px-6 md:px-8 py-32 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-primary/60 dark:text-primary-fixed/60 mb-3">Coming Soon</p>
           <h1 className="text-5xl md:text-7xl font-extrabold tight-tracking text-on-surface dark:text-white mb-6">Our Services</h1>

@@ -34,6 +34,7 @@ const errorBase = "border-red-400/60 ring-2 ring-red-400/20";
 export default function ContactCTA() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const {
     register,
@@ -43,9 +44,16 @@ export default function ContactCTA() {
 
   const onSubmit = async (data: FormValues) => {
     setSubmitting(true);
+    setSubmitError(null);
     try {
-      await submitLead(data as LeadFormData);
-      setSubmitted(true);
+      const result = await submitLead(data as LeadFormData);
+      if (!result.success) {
+        setSubmitError(result.error || "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setSubmitError("An unexpected error occurred. Please try again or call us directly.");
     } finally {
       setSubmitting(false);
     }
@@ -77,6 +85,8 @@ export default function ContactCTA() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, ease: [0.25, 1, 0.3, 1] }}
                   className="flex flex-col items-center text-center py-12"
+                  aria-live="polite"
+                  role="status"
                 >
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
@@ -221,6 +231,17 @@ export default function ContactCTA() {
                       "Send My Request"
                     )}
                   </TactileButton>
+
+                  {submitError && (
+                    <motion.p
+                      initial={{ opacity: 0, y: -8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-center text-[13px] text-red-500 font-medium"
+                      role="alert"
+                    >
+                      {submitError}
+                    </motion.p>
+                  )}
 
                   <p className="text-center text-[12px] text-on-surface-variant/50 dark:text-white/30 font-light">
                     No spam. We&apos;ll only contact you about your quote.

@@ -30,7 +30,7 @@ const badges = [
 
 export default function TrustStrip() {
   return (
-    <section className="py-10 px-6 md:px-8 bg-surface-container-lowest dark:bg-[#0d1f17] border-y border-outline-variant/10 dark:border-white/5">
+    <section className="py-10 px-6 md:px-8 bg-surface-container-lowest dark:bg-[#0d1f17]">
       <div className="max-w-7xl mx-auto">
         <RevealWrapper>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
